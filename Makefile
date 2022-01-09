@@ -6,7 +6,7 @@
 #    By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/21 18:57:42 by nvasilev          #+#    #+#              #
-#    Updated: 2021/12/21 19:05:06 by nvasilev         ###   ########.fr        #
+#    Updated: 2022/01/09 06:48:36 by nvasilev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,8 @@ CC = 			gcc
 CFLAGS =		-Wall -Wextra -Werror
 RM =			rm -f
 
+INCLUDES = -I ./includes/
+
 ################################################################################
 #                                 PROGRAM'S SRCS                               #
 ################################################################################
@@ -31,7 +33,13 @@ UTILS =			./utils/ft_putchar_fd.c \
 				./utils/ft_putstr_fd.c \
 				./utils/ft_error.c \
 				./utils/ft_isdigit.c \
-				./utils/ft_atoi.c
+				./utils/ft_atoi.c \
+				./utils/ft_isspace.c \
+				./utils/ft_issign.c \
+				./utils/ft_split.c \
+				./utils/ft_strlen.c \
+				./utils/ft_strjoin.c \
+				./utils/ft_strdup.c
 
 ################################################################################
 #                                     OBJECTS                                  #
@@ -47,10 +55,10 @@ OBJS =			$(UTILS:%.c=%.o)
 all: $(NAME)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(NAME): $(OBJS) $(OBJS_SRCS)
-	$(CC) $(OBJS) $(OBJS_SRCS) -o $@
+	$(CC) $(OBJS) $(OBJS_SRCS) $(INCLUDES) -o $@
 
 clean:
 	$(RM) $(OBJS) $(OBJS_SRCS)
