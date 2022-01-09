@@ -6,7 +6,7 @@
 #    By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/21 18:57:42 by nvasilev          #+#    #+#              #
-#    Updated: 2022/01/09 06:48:36 by nvasilev         ###   ########.fr        #
+#    Updated: 2022/01/09 16:57:01 by nvasilev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,8 @@ UTILS =			./utils/ft_putchar_fd.c \
 				./utils/ft_split.c \
 				./utils/ft_strlen.c \
 				./utils/ft_strjoin.c \
-				./utils/ft_strdup.c
+				./utils/ft_strdup.c \
+				./utils/atoint128.c
 
 ################################################################################
 #                                     OBJECTS                                  #
