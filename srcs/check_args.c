@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 18:40:40 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/01/09 06:47:31 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/01/09 16:57:48 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <limits.h>
 
 static char	*parse_integers(int argc, char const *argv[])
 {
