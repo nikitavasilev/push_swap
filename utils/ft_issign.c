@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_issign.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/08 17:05:49 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/01/09 05:45:05 by nvasilev         ###   ########.fr       */
+/*   Created: 2022/01/09 06:47:55 by nvasilev          #+#    #+#             */
+/*   Updated: 2022/01/09 06:47:58 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	ft_putchar_fd(int c, int fd)
+int	ft_issign(int c)
 {
-	return (write(fd, &c, 1));
+	if (c == '-' || c == '+')
+		return (c);
+	return (0);
 }

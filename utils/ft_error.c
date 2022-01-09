@@ -6,11 +6,13 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 15:52:43 by nvasilev          #+#    #+#             */
-/*   Updated: 2021/12/21 18:45:37 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/01/09 05:47:33 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "libft.h"
+#include <stdlib.h>
+#include <unistd.h>
 
 void	ft_error(const char *str)
 {

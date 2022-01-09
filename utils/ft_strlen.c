@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/08 17:05:49 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/01/09 05:45:05 by nvasilev         ###   ########.fr       */
+/*   Created: 2021/12/26 01:01:10 by nvasilev          #+#    #+#             */
+/*   Updated: 2021/12/30 04:33:05 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stddef.h>
 
-int	ft_putchar_fd(int c, int fd)
+size_t	ft_strlen(const char *s)
 {
-	return (write(fd, &c, 1));
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }

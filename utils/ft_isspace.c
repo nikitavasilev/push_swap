@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/08 17:05:49 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/01/09 05:45:05 by nvasilev         ###   ########.fr       */
+/*   Created: 2022/01/09 05:37:21 by nvasilev          #+#    #+#             */
+/*   Updated: 2022/01/09 05:41:20 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	ft_putchar_fd(int c, int fd)
+int	ft_isspace(int c)
 {
-	return (write(fd, &c, 1));
+	if (c == ' ' || c == '\f' || c == '\n'
+		|| c == '\r' || c == '\t' || c == '\v')
+		return (c);
+	return (0);
 }
