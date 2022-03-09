@@ -53,14 +53,22 @@ int	check_int_len(char *str)
 {
 	int		len;
 	size_t	i;
+	size_t	tmp;
 
 	i = 0;
 	len = 0;
+	while ((ft_isspace(str[i])))
+		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
 		i++;
 		len++;
 	}
+	tmp = i;
+	while (ft_isdigit(str[tmp]))
+		tmp++;
+	if (!ft_isdigit(str[tmp]))
+		return(0);
 	while (str[i] == '0')
 		i++;
 	while (str[i])
