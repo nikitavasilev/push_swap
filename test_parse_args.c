@@ -6,20 +6,24 @@ char	**fill_args(int argc, char const *argv[])
 {
 	size_t	i;
 	size_t	j;
+	char	**digits;
 
-	while (argc == 2)
-	{
-		ft_split(argv[1])
-	}
+	if (argc == 2)
+		digits = ft_split(argv[1], ' ');
+	return (digits);
 }
 
 int	main(int argc, char const *argv[])
 {
 	char	**args;
+	size_t	i;
 
-	if (argc > 2)
+	if (argc >= 2)
 	{
 		args = fill_args(argc, argv);
 	}
+	i = 0;
+	while (args[i])
+		printf("%s\n", args[i++]);
 	return (0);
 }
