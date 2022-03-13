@@ -2,20 +2,17 @@
 #include <stdlib.h>
 #include <limits.h>
 
-typedef struct s_list	t_list;
-typedef struct s_pos	t_pos;
-
-struct s_list
+typedef struct s_list
 {
-	int		num;
-	t_list	*next;
-};
+	int				num;
+	struct s_list	*next;
+}	t_list;
 
-struct s_pos
+typedef struct s_pos
 {
 	t_list	*head;
 	t_list	*tail;
-};
+}	t_pos;
 
 t_list	*create_node(t_list *previous, int num, t_pos *pos)
 {
@@ -40,6 +37,17 @@ void	del_list(t_list *lst)
 		free(temp);
 	}
 	free(lst);
+}
+
+void print_list(t_list *head)
+{
+	t_list *current = head;
+
+	while (current != NULL)
+	{
+		printf("%d\n", current->num);
+		current = current->next;
+	}
 }
 
 int	main(void)
