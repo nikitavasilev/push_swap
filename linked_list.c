@@ -39,47 +39,77 @@ void	del_list(t_list *lst)
 	free(lst);
 }
 
-void print_list(t_list *head)
+void print_list(t_pos *pos)
 {
-	t_list *current = head;
+	t_list	*current;
+	size_t	i;
 
-	while (current != NULL)
+	i = 0;
+	current = pos->head;
+	while (current != pos->tail)
 	{
-		printf("%d\n", current->num);
+		printf("Node no %zu: %d\n", i++, current->num);
 		current = current->next;
 	}
+	printf("Node no %zu: %d\n", i++, current->num);
+}
+
+t_list	*alloc_lst(void)
+{
+	t_list	*lst;
+
+	lst = malloc(sizeof(t_list));
+	if (!lst)
+		return(NULL);
+	lst->next = NULL;
+	return (lst);
+}
+
+t_pos	*alloc_pos(void)
+{
+	t_pos	*pos;
+
+	pos = malloc(sizeof(t_pos));
+	if (!pos)
+		return (NULL);
+	pos->head = NULL;
+	pos->tail = NULL;
+	return (pos);
+}
+
+void	swap(t_pos *node)
+{
+	t_list	*temp[3];
+
+	temp[0] = node->head;
+	temp[1] = node->head->next;
+	temp[2] = node->head->next->next;
+	node->head = temp[1];
+	node->head->next = temp[0];
+	node->head->next->next = temp[2];
 }
 
 int	main(void)
 {
 	t_list	*list;
 	t_pos	*pos;
-	size_t	i;
 
-	list = malloc(sizeof(t_list));
-	pos = malloc(sizeof(t_pos));
+	list = alloc_lst();
+	pos = alloc_pos();
 
 	list->num = 24;
 	pos->head = list;
 	list = create_node(list, 42, pos);
-	printf("Head: %d\n", pos->head->num);
-	printf("Tail: %d\n", pos->tail->num);
-	printf("\n\n");
 	list = create_node(list, -25, pos);
 	list = create_node(list, 32, pos);
 	list = create_node(list, INT_MAX, pos);
 	list = create_node(list, INT_MIN, pos);
 
-	list = pos->head;
-	i = 0;
-	while (list->next)
-	{
-		printf("Node no %zu: %d\n", i++, list->num);
-		list = list->next;
-	}
-	printf("Node no %zu: %d\n", i++, list->num);
-	printf("\n\nHead: %d\n", pos->head->num);
-	printf("Tail: %d\n", pos->tail->num);
+	print_list(pos);
+	swap(pos);
+	printf("\n\nSwap a:\n");
+	print_list(pos);
+
 	del_list(pos->head);
 	free(pos);
 	return (0);
