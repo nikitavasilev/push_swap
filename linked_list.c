@@ -5,6 +5,7 @@
 typedef struct s_list
 {
 	int				num;
+	struct s_list	*previous;
 	struct s_list	*next;
 }	t_list;
 
@@ -21,6 +22,7 @@ t_list	*create_node(t_list *previous, int num, t_pos *pos)
 	list = malloc(sizeof(t_list));
 	list->num = num;
 	list->next = NULL;
+	list->previous = previous;
 	previous->next = list;
 	pos->tail = (void *)list;
 	return (list);
@@ -62,6 +64,7 @@ t_list	*alloc_lst(void)
 	if (!lst)
 		return(NULL);
 	lst->next = NULL;
+	lst->previous = NULL;
 	return (lst);
 }
 
@@ -89,6 +92,21 @@ void	swap(t_pos *node)
 	node->head->next->next = temp[2];
 }
 
+void	rotate(t_pos *node)
+{
+	t_list	*temp[3];
+
+	temp[0] = node->head; //0x01
+	temp[1] = node->head->next; //0x02
+	temp[2] = node->tail->previous;
+	node->head = node->tail; //0x01 -> 0x10
+	node->head->next = temp[1]; //NULL -> 0x02
+	node->tail->previous->next = temp[0];
+	node->tail = temp[0]; //0x10 -> 0x01
+	node->tail->next = NULL; //0x02 -> NULL
+	node->tail->previous = temp[2];
+}
+
 int	main(void)
 {
 	t_list	*list;
@@ -108,6 +126,11 @@ int	main(void)
 	print_list(pos);
 	swap(pos);
 	printf("\n\nSwap a:\n");
+	print_list(pos);
+
+	rotate(pos);
+	printf("\nHead: %d, tail: %d\n", pos->head->next->num, pos->tail->num);
+	printf("\n\nRotate a:\n");
 	print_list(pos);
 
 	del_list(pos->head);
