@@ -6,7 +6,7 @@
 #    By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/21 18:57:42 by nvasilev          #+#    #+#              #
-#    Updated: 2022/01/09 16:57:01 by nvasilev         ###   ########.fr        #
+#    Updated: 2022/03/16 18:52:25 by nvasilev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,14 +33,13 @@ UTILS =			./utils/ft_putchar_fd.c \
 				./utils/ft_putstr_fd.c \
 				./utils/ft_error.c \
 				./utils/ft_isdigit.c \
-				./utils/ft_atoi.c \
 				./utils/ft_isspace.c \
 				./utils/ft_issign.c \
 				./utils/ft_split.c \
 				./utils/ft_strlen.c \
 				./utils/ft_strjoin.c \
 				./utils/ft_strdup.c \
-				./utils/atoint128.c
+				./utils/atoi_err_overflow.c
 
 ################################################################################
 #                                     OBJECTS                                  #
