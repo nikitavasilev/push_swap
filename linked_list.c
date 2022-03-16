@@ -94,14 +94,28 @@ void	swap(t_pos *node)
 
 void	rotate(t_pos *node)
 {
-	t_list	*temp;
+	t_list	*temp[2];
 
-	temp = node->head->next;
+	temp[0] = node->head->next;
+	temp[1] = node->tail;
 	node->tail->next = node->head;
 	node->tail = node->head;
 	node->tail->next = NULL;
-	node->head = temp;
+	node->tail->previous = temp[1];
+	node->head = temp[0];
 	node->head->previous = NULL;
+}
+
+void	rrotate(t_pos *node)
+{
+	t_list	*temp;
+
+	temp = node->tail->previous;
+	node->tail->next = node->head;
+	node->tail->previous->next = NULL;
+	node->head = node->tail;
+	node->head->previous = NULL;
+	node->tail = temp;
 }
 
 int	main(void)
@@ -130,6 +144,11 @@ int	main(void)
 
 	rotate(pos);
 	printf("\n\nRotate a:\n");
+	print_list(pos);
+	printf("\nHead: %d, tail: %d\n", pos->head->num, pos->tail->num);
+
+	rrotate(pos);
+	printf("\n\nReverse rotate a:\n");
 	print_list(pos);
 	printf("\nHead: %d, tail: %d\n", pos->head->num, pos->tail->num);
 
