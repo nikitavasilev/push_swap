@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 18:19:13 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/16 18:59:25 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/16 19:59:47 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,13 @@ typedef struct s_pos
 	t_list	*tail;
 }	t_pos;
 
-int	check_args(int argc, char const *argv[]);
+int		check_args(int argc, char const *argv[]);
 void	del_list(t_list *lst);
 t_list	*create_node(t_list *previous, int num, t_pos *pos);
+t_list	*alloc_lst(void);
+t_pos	*alloc_pos(void);
+void	swap(t_pos *node);
+void	rotate(t_pos *node);
+void	rrotate(t_pos *node);
 
 #endif
