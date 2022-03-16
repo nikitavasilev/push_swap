@@ -6,7 +6,7 @@
 #    By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/21 18:57:42 by nvasilev          #+#    #+#              #
-#    Updated: 2022/03/16 18:52:25 by nvasilev         ###   ########.fr        #
+#    Updated: 2022/03/16 18:59:43 by nvasilev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,9 @@ INCLUDES = -I ./includes/
 ################################################################################
 
 SRCS =			./srcs/main.c \
-				./srcs/check_args.c
+				./srcs/check_args.c \
+				./srcs/create_node.c \
+				./srcs/del_list.c
 
 UTILS =			./utils/ft_putchar_fd.c \
 				./utils/ft_putstr_fd.c \
