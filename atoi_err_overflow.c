@@ -41,6 +41,11 @@ int	atoi_err_overflow(const char *str, int *err)
 		}
 		str++;
 	}
+	if (!ft_isdigit(*str) && *str)
+	{
+		*err = 1;
+		return (1);
+	}
 	return (nb * sign);
 }
 
