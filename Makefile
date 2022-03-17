@@ -6,7 +6,7 @@
 #    By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/21 18:57:42 by nvasilev          #+#    #+#              #
-#    Updated: 2022/03/16 20:06:55 by nvasilev         ###   ########.fr        #
+#    Updated: 2022/03/17 06:48:30 by nvasilev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,8 @@ SRCS =			./srcs/main.c \
 				./srcs/swap.c \
 				./srcs/rotate.c \
 				./srcs/rrotate.c \
-				./srcs/print_list.c
+				./srcs/print_list.c \
+				./srcs/parser.c
 
 UTILS =			./utils/ft_putchar_fd.c \
 				./utils/ft_putstr_fd.c \
@@ -46,7 +47,8 @@ UTILS =			./utils/ft_putchar_fd.c \
 				./utils/ft_strlen.c \
 				./utils/ft_strjoin.c \
 				./utils/ft_strdup.c \
-				./utils/atoi_err_overflow.c
+				./utils/atoi_err_overflow.c \
+				./utils/strjoin_free_s1.c
 
 ################################################################################
 #                                     OBJECTS                                  #
