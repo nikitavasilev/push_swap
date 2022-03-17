@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 18:35:19 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/16 18:41:12 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/17 06:24:21 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,11 @@ int	atoi_err_overflow(const char *str, int *err)
 			return (1);
 		}
 		str++;
+	}
+	if (!ft_isdigit(*str) && *str)
+	{
+		*err = 1;
+		return (1);
 	}
 	return (nb * sign);
 }
