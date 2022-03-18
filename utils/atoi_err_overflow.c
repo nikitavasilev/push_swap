@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 18:35:19 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/18 04:32:10 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/18 22:50:39 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	err_check(const char c, int *err, int end)
 
 static char	*conv_overflow(const char *str, char sign, int *err, __int64_t *nb)
 {
-	int	max;
+	unsigned int	max;
 
 	max = INT_MAX;
 	*nb = 0;
