@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 06:44:06 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/17 06:56:19 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/18 02:10:27 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ char	**parse(const char **argv)
 	i = 1;
 	while (argv[i])
 	{
+		if (!ft_strlen(argv[i]))
+		{
+			free(str);
+			ft_error("Error");
+		}
 		str = strjoin_free_s1(str, argv[i]);
 		if (argv[i + 1])
 			str = strjoin_free_s1(str, " ");
