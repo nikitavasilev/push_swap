@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 06:49:14 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/18 03:33:05 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/19 01:37:37 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,13 @@ t_pos	*fill_stack(char **args)
 		if (err)
 			free_stack_err(pos, args);
 		list = create_node(list, num, pos);
+		check_dups(pos, &err);
+		if (err)
+			free_stack_err(pos, args);
 		i++;
 	}
+	if (err)
+		free_stack_err(pos, args);
 	free_2d(args);
 	return (pos);
 }
