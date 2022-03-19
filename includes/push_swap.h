@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 18:19:13 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/17 07:35:18 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/18 23:17:26 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ void	rrotate(t_pos *node);
 void	print_list(t_pos *pos);
 char	**parse(const char **argv);
 t_pos	*fill_stack(char **args);
+void	check_dups(t_pos *pos, int *err);
 
 #endif
