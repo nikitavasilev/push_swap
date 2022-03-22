@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 18:25:43 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/18 01:38:09 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/22 11:12:01 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int argc, char const *argv[])
 	t_pos	*stack_a;
 	char	**args;
 
-	if (argc > 2)
+	if (argc >= 2)
 	{
 		args = parse(argv);
 		stack_a = fill_stack(args);
