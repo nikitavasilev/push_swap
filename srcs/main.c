@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 18:25:43 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/22 11:12:01 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/22 11:24:21 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,5 @@ int	main(int argc, char const *argv[])
 		del_list(stack_a->head);
 		free(stack_a);
 	}
-	else
-		ft_error("Usage: ./push_swap <integers>");
 	return (0);
 }
