@@ -6,7 +6,7 @@
 #    By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/21 18:57:42 by nvasilev          #+#    #+#              #
-#    Updated: 2022/03/18 23:15:34 by nvasilev         ###   ########.fr        #
+#    Updated: 2022/03/22 11:56:52 by nvasilev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,8 @@ SRCS =			./srcs/main.c \
 				./srcs/print_list.c \
 				./srcs/parser.c \
 				./srcs/fill_stack.c \
-				./srcs/check_dups.c
+				./srcs/check_dups.c \
+				./srcs/push.c
 
 UTILS =			./utils/ft_putchar_fd.c \
 				./utils/ft_putstr_fd.c \
