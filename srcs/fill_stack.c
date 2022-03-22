@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 06:49:14 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/19 01:37:37 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/22 11:11:01 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,12 @@ static t_list	*create_first_node(char **args, int *err, t_pos *pos)
 
 	list = alloc_lst();
 	list->num = check_args(args[0], err);
-	if (*err)
-		free_stack_err(pos, args);
 	list->previous = NULL;
 	list->next = NULL;
 	pos->head = list;
 	pos->tail = list;
+	if (*err)
+		free_stack_err(pos, args);
 	return (list);
 }
 
