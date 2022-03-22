@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 23:06:45 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/19 01:38:13 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/22 11:32:28 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	check_dups(t_pos *pos, int *err)
 	t_list	*current;
 
 	current = pos->head;
-	while (current != pos->tail->previous)
+	while (current != pos->tail)
 	{
 		if (current->num == pos->tail->num)
 		{
