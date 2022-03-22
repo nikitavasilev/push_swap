@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 06:49:14 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/22 11:11:01 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/22 11:24:45 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ t_pos	*fill_stack(char **args)
 			free_stack_err(pos, args);
 		i++;
 	}
-	if (err)
+	if (err || i == 1)
 		free_stack_err(pos, args);
 	free_2d(args);
 	return (pos);
