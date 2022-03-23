@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 20:05:38 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/16 20:07:10 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/23 21:18:11 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ void	print_list(t_pos *pos)
 		printf("Node no %zu: %d\n", i++, current->num);
 		current = current->next;
 	}
-	printf("Node no %zu: %d\n", i++, current->num);
+	if (pos->tail)
+		printf("Node no %zu: %d\n", i++, current->num);
 }
