@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 11:45:40 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/22 12:12:31 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/23 21:24:15 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	push(t_pos *src, t_pos *dest)
 {
 	t_list	*temp[2];
 
+	temp[1] = NULL;
 	temp[0] = src->head->next;
 	if (dest->head)
 		temp[1] = dest->head->next;

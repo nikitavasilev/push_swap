@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 18:25:43 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/22 12:08:40 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/23 21:16:19 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	main(int argc, char const *argv[])
 		stack_b = alloc_pos();
 		printf("Stack a:\n");
 		print_list(stack_a);
+		stack_b = alloc_pos();
 		push(stack_a, stack_b);
 		printf("Stack b:\n");
 		print_list(stack_b);
