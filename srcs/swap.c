@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 19:53:46 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/24 20:00:42 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/24 21:30:18 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ void	sa(t_pos *stack_a)
 
 void	sb(t_pos *stack_b)
 {
-	swap(stack_b);
+	if (stack_b->head && stack_b->head->next)
+		swap(stack_b);
 	ft_putstr_fd("sb\n", STDOUT_FILENO);
 }
 
