@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 18:19:13 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/24 19:34:07 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/24 19:45:47 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ t_list	*create_node(t_list *previous, int num, t_pos *pos);
 t_list	*alloc_lst(void);
 t_pos	*alloc_pos(void);
 void	swap(t_pos *node);
-void	rotate(t_pos *node);
+void	ra(t_pos *stack_a);
+void	rb(t_pos *stack_b);
 void	rrotate(t_pos *node);
 void	pa(t_pos *stack_b, t_pos *stack_a);
 void	pb(t_pos *stack_a, t_pos *stack_b);
