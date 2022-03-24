@@ -6,10 +6,11 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 19:56:56 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/24 19:44:37 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/24 19:59:18 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "push_swap.h"
 #include <unistd.h>
 
@@ -37,4 +38,11 @@ void	rb(t_pos *stack_b)
 {
 	rotate(stack_b);
 	ft_putstr_fd("rb\n", STDOUT_FILENO);
+}
+
+void	rr(t_pos *stack_a, t_pos *stack_b)
+{
+	rotate(stack_a);
+	rotate(stack_b);
+	ft_putstr_fd("rr\n", STDOUT_FILENO);
 }
