@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 11:45:40 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/24 19:51:48 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/25 00:42:37 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,11 @@ static void	push(t_pos *src, t_pos *dest)
 	temp[1] = NULL;
 	temp[0] = src->head->next;
 	if (dest->head)
-		temp[1] = dest->head->next;
+		temp[1] = dest->head;
 	dest->head = src->head;
 	dest->head->next = temp[1];
-	dest->head->previous = NULL;
+	if (!temp[1])
+		dest->head->previous = NULL;
 	src->head = temp[0];
 	src->head->previous = NULL;
 }
