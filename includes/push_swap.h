@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 18:19:13 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/24 19:50:13 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/24 19:56:01 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ void	sa(t_pos *stack_a);
 void	sb(t_pos *stack_b);
 void	ra(t_pos *stack_a);
 void	rb(t_pos *stack_b);
-void	rrotate(t_pos *node);
+void	rra(t_pos *stack_a);
+void	rrb(t_pos *stack_b);
 void	pa(t_pos *stack_b, t_pos *stack_a);
 void	pb(t_pos *stack_a, t_pos *stack_b);
 void	print_list(t_pos *pos);
