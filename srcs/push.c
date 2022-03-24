@@ -6,12 +6,12 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 11:45:40 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/24 19:45:01 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/24 19:51:48 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
 #include "libft.h"
+#include "push_swap.h"
 #include <unistd.h>
 
 static void	push(t_pos *src, t_pos *dest)
