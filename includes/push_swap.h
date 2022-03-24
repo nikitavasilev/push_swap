@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 18:19:13 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/22 11:56:35 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/24 19:34:07 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ t_pos	*alloc_pos(void);
 void	swap(t_pos *node);
 void	rotate(t_pos *node);
 void	rrotate(t_pos *node);
-void	push(t_pos *src, t_pos *dest);
+void	pa(t_pos *stack_b, t_pos *stack_a);
+void	pb(t_pos *stack_a, t_pos *stack_b);
 void	print_list(t_pos *pos);
 char	**parse(const char **argv);
 t_pos	*fill_stack(char **args);
