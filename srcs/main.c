@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 18:25:43 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/24 17:27:35 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/28 22:20:40 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 int	main(int argc, char const *argv[])
 {
@@ -22,14 +21,16 @@ int	main(int argc, char const *argv[])
 	t_pos	*stack_b;
 	char	**args;
 
-	if (argc >= 2)
+	if (argc > 2)
 	{
 		args = parse(argv);
 		stack_a = fill_stack(args);
 		printf("Stack a:\n");
 		print_list(stack_a);
 		stack_b = alloc_pos();
-		push(stack_a, stack_b);
+		pb(stack_a, stack_b);
+		pb(stack_a, stack_b);
+		pb(stack_a, stack_b);
 		printf("Stack b:\n");
 		print_list(stack_b);
 		printf("Stack a:\n");
