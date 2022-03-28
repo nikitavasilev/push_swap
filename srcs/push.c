@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 11:45:40 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/25 00:42:37 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/28 22:19:28 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,43 @@
 
 static void	push(t_pos *src, t_pos *dest)
 {
-	t_list	*temp[2];
+	t_list	*temp_src_head;
+	t_list	*temp_dest_head;
 
-	temp[1] = NULL;
-	temp[0] = src->head->next;
+	temp_dest_head = dest->head;
+	if (src->head)
+	{
+		temp_src_head = src->head;
+		src->head = src->head->next;
+		if (src->head)
+			src->head->previous = NULL;
+		else
+			src->tail = NULL;
+	}
 	if (dest->head)
-		temp[1] = dest->head;
-	dest->head = src->head;
-	dest->head->next = temp[1];
-	if (!temp[1])
-		dest->head->previous = NULL;
-	src->head = temp[0];
-	src->head->previous = NULL;
+	{
+		dest->head->previous = temp_src_head;
+		temp_src_head->next = dest->head;
+		dest->head = temp_src_head;
+	}
+	else
+	{
+		dest->head = temp_src_head;
+		dest->tail = temp_src_head;
+	}
+	dest->head->next = temp_dest_head;
 }
 
 void	pa(t_pos *stack_b, t_pos *stack_a)
 {
-	push(stack_b, stack_a);
+	if (stack_b->head)
+		push(stack_b, stack_a);
 	ft_putstr_fd("pa\n", STDOUT_FILENO);
 }
 
 void	pb(t_pos *stack_a, t_pos *stack_b)
 {
-	push(stack_a, stack_b);
+	if (stack_a->head)
+		push(stack_a, stack_b);
 	ft_putstr_fd("pb\n", STDOUT_FILENO);
 }
