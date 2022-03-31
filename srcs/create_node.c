@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 18:55:03 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/17 07:56:48 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/28 23:17:07 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ t_list	*create_node(t_list *previous, int num, t_pos *pos)
 	list->previous = previous;
 	previous->next = list;
 	pos->tail = list;
+	pos->size++;
 	return (list);
 }
