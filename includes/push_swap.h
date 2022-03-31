@@ -6,12 +6,14 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 18:19:13 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/24 20:02:40 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/31 03:51:16 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
+# include <stddef.h>
 
 typedef struct s_list
 {
@@ -24,6 +26,7 @@ typedef struct s_pos
 {
 	t_list	*head;
 	t_list	*tail;
+	size_t	size;
 }	t_pos;
 
 t_list	*alloc_lst(void);
@@ -49,7 +52,7 @@ void	rrr(t_pos *stack_a, t_pos *stack_b);
 void	pa(t_pos *stack_b, t_pos *stack_a);
 void	pb(t_pos *stack_a, t_pos *stack_b);
 
-void	print_list(t_pos *pos);
+void	print_list(t_pos *pos, char stack);
 void	del_list(t_list *lst);
 
 #endif
