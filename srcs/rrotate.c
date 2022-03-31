@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 19:59:09 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/31 03:33:56 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/31 06:31:33 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ static void	rrotate(t_pos *node)
 
 	old_head = node->head;
 	old_tail = node->tail;
-	node->tail = old_tail->previous;
+	node->tail = old_tail->prev;
 	node->head = old_tail;
 	node->tail->next = NULL;
 	node->head->next = old_head;
-	node->head->previous = NULL;
-	old_head->previous = node->head;
+	node->head->prev = NULL;
+	old_head->prev = node->head;
 }
 
 void	rra(t_pos *stack_a)

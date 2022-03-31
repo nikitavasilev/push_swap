@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 18:19:13 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/31 03:51:16 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/31 06:27:01 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 typedef struct s_list
 {
-	int				num;
-	struct s_list	*previous;
+	int				data;
+	struct s_list	*prev;
 	struct s_list	*next;
 }	t_list;
 
@@ -31,7 +31,7 @@ typedef struct s_pos
 
 t_list	*alloc_lst(void);
 t_pos	*alloc_pos(void);
-t_list	*create_node(t_list *previous, int num, t_pos *pos);
+t_list	*create_node(t_list *prev, int data, t_pos *pos);
 
 char	**parse(const char **argv);
 t_pos	*fill_stack(char **args);

@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 06:49:14 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/28 23:17:34 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/31 06:30:06 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ static void	free_2d(char **args)
 
 static int	check_args(char *str, int *err)
 {
-	int	num;
+	int	data;
 
-	num = atoi_err_overflow(str, err);
+	data = atoi_err_overflow(str, err);
 	if (*err)
 		return (1);
-	return (num);
+	return (data);
 }
 
 static void	free_stack_err(t_pos *pos, char **args)
@@ -50,8 +50,8 @@ static t_list	*create_first_node(char **args, int *err, t_pos *pos)
 	t_list	*list;
 
 	list = alloc_lst();
-	list->num = check_args(args[0], err);
-	list->previous = NULL;
+	list->data = check_args(args[0], err);
+	list->prev = NULL;
 	list->next = NULL;
 	pos->head = list;
 	pos->tail = list;
@@ -66,7 +66,7 @@ t_pos	*fill_stack(char **args)
 	size_t	i;
 	t_list	*list;
 	t_pos	*pos;
-	int		num;
+	int		data;
 	int		err;
 
 	err = 0;
@@ -75,10 +75,10 @@ t_pos	*fill_stack(char **args)
 	i = 1;
 	while (args[i])
 	{
-		num = check_args(args[i], &err);
+		data = check_args(args[i], &err);
 		if (err)
 			free_stack_err(pos, args);
-		list = create_node(list, num, pos);
+		list = create_node(list, data, pos);
 		check_dups(pos, &err);
 		if (err)
 			free_stack_err(pos, args);
