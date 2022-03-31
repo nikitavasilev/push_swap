@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 18:57:41 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/28 22:14:05 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/31 07:42:07 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,12 @@ void	del_list(t_list *lst)
 		free(temp);
 	}
 	free(lst);
+}
+
+void	free_stacks(t_pos *stack_a, t_pos *stack_b)
+{
+	del_list(stack_a->head);
+	del_list(stack_b->head);
+	free(stack_a);
+	free(stack_b);
 }
