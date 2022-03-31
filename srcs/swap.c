@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 19:53:46 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/24 21:30:18 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/31 03:48:30 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,24 @@ static void	swap(t_pos *node)
 
 void	sa(t_pos *stack_a)
 {
-	swap(stack_a);
+	if (stack_a->size > 1)
+		swap(stack_a);
 	ft_putstr_fd("sa\n", STDOUT_FILENO);
 }
 
 void	sb(t_pos *stack_b)
 {
-	if (stack_b->head && stack_b->head->next)
+	if (stack_b->size > 1)
 		swap(stack_b);
 	ft_putstr_fd("sb\n", STDOUT_FILENO);
 }
 
 void	ss(t_pos *stack_a, t_pos *stack_b)
 {
-	swap(stack_a);
-	swap(stack_b);
+	if (stack_a->size > 1 && stack_b->size > 1)
+	{
+		swap(stack_a);
+		swap(stack_b);
+	}
 	ft_putstr_fd("ss\n", STDOUT_FILENO);
 }
