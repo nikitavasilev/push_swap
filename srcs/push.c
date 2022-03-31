@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 11:45:40 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/28 22:19:28 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/31 04:29:55 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,21 @@ static void	push(t_pos *src, t_pos *dest)
 void	pa(t_pos *stack_b, t_pos *stack_a)
 {
 	if (stack_b->head)
+	{
 		push(stack_b, stack_a);
+		stack_a->size++;
+		stack_b->size--;
+	}
 	ft_putstr_fd("pa\n", STDOUT_FILENO);
 }
 
 void	pb(t_pos *stack_a, t_pos *stack_b)
 {
 	if (stack_a->head)
+	{
 		push(stack_a, stack_b);
+		stack_b->size++;
+		stack_a->size--;
+	}
 	ft_putstr_fd("pb\n", STDOUT_FILENO);
 }
