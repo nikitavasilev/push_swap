@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 18:19:13 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/31 06:27:01 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/31 07:48:47 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ void	rrr(t_pos *stack_a, t_pos *stack_b);
 void	pa(t_pos *stack_b, t_pos *stack_a);
 void	pb(t_pos *stack_a, t_pos *stack_b);
 
-void	print_list(t_pos *pos, char stack);
+void	print_stacks(t_pos *stack_a, t_pos *stack_b);
+void	free_stacks(t_pos *stack_a, t_pos *stack_b);
 void	del_list(t_list *lst);
 
 #endif
