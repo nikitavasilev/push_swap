@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 19:47:55 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/16 20:00:30 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/28 23:16:32 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ t_pos	*alloc_pos(void)
 		return (NULL);
 	pos->head = NULL;
 	pos->tail = NULL;
+	pos->size = 0;
 	return (pos);
 }
