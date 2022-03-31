@@ -6,12 +6,11 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 06:21:29 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/17 06:22:05 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/31 06:21:57 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
 #include <stdlib.h>
 
 char	*strjoin_free_s1(char *s1, char const *s2)

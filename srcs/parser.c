@@ -6,13 +6,12 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 06:44:06 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/18 02:10:27 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/31 06:21:18 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
-#include <stddef.h>
 #include <stdlib.h>
 
 char	**parse(const char **argv)
