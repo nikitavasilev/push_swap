@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 20:05:38 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/31 06:30:38 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/03/31 07:48:08 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static void	print_line_info(char stack, int size, int data)
 	}
 }
 
-void	print_list(t_pos *pos, char stack)
+static void	print_list(t_pos *pos, char stack)
 {
 	t_list	*current;
 	int		i;
@@ -52,4 +52,10 @@ void	print_list(t_pos *pos, char stack)
 	}
 	if (pos->tail)
 		print_line_info(' ', i++, current->data);
+}
+
+void	print_stacks(t_pos *stack_a, t_pos *stack_b)
+{
+	print_list(stack_a, 'a');
+	print_list(stack_b, 'b');
 }
