@@ -6,13 +6,15 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 08:02:52 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/31 10:22:14 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/04/02 04:11:05 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-static void	insert_sort(t_pos *stack_a, t_pos *stack_b)
+/*static void	insertion_sort(t_pos *stack_a, t_pos *stack_b)
 {
 	t_list	*current;
 
@@ -29,6 +31,63 @@ static void	insert_sort(t_pos *stack_a, t_pos *stack_b)
 		else
 			current = current->next;
 	}
+}*/
+
+static int	*get_array(t_pos *stack_a)
+{
+	int		*array;
+	t_list	*current;
+	int		i;
+
+	i = 0;
+	array = (int*)malloc(sizeof(int) * stack_a->size);
+	if (!array)
+		return (NULL);
+	current = stack_a->head;
+	while (current)
+	{
+		array[i] = current->data;
+		current = current->next;
+		i++;
+	}
+	return (array);
+}
+
+static int bubble_sort(int *array, unsigned int size)
+{
+	unsigned int	i;
+	unsigned int	j;
+	int				temp;
+
+	i = 0;
+	while (i < size)
+	{
+		j = 0;
+		while (j < size - 1)
+		{
+			if (array[j] > array[j + 1])
+			{
+				temp = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = temp;
+			}
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
+int	find_median(t_pos *stack_a)
+{
+	int		*array;
+	int		median;
+
+	array = get_array(stack_a);
+	bubble_sort(array, stack_a->size);
+	median = array[stack_a->size / 2];
+	free(array);
+	return (median);
 }
 
 static int	is_sorted(t_pos *stack)
@@ -47,10 +106,15 @@ static int	is_sorted(t_pos *stack)
 
 void	sort(t_pos *stack_a, t_pos *stack_b)
 {
+	int	median;
+
+	median = find_median(stack_a);
+	printf("median: %d\n", median);
+	(void)stack_b;
 	if (is_sorted(stack_a))
 		return ;
-	if (stack_a->size <= 10)
+/*	if (stack_a->size <= 10)
 		insertion_sort(stack_a, stack_b);
 	else
-		quicksort(stack_a, stack_b);
+		quicksort(stack_a, stack_b);*/
 }
