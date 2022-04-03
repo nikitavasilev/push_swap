@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 18:25:43 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/31 08:10:32 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/04/03 21:08:41 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int argc, char const *argv[])
 		stack_a = fill_stack(args);
 		stack_b = alloc_pos();
 		sort(stack_a, stack_b);
-		//print_stacks(stack_a, stack_b);
+		print_stacks(stack_a, stack_b);
 		free_stacks(stack_a, stack_b);
 	}
 	return (0);
