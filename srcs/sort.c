@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 08:02:52 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/04/03 21:08:53 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/04/04 19:40:42 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static int	*get_array(t_pos *stack_a)
 	int		i;
 
 	i = 0;
-	array = (int*)malloc(sizeof(int) * stack_a->size);
+	array = (int *)malloc(sizeof(int) * stack_a->size);
 	if (!array)
 		return (NULL);
 	current = stack_a->head;
@@ -53,7 +53,7 @@ static int	*get_array(t_pos *stack_a)
 	return (array);
 }
 
-static int bubble_sort(int *array, unsigned int size)
+static int	bubble_sort(int *array, unsigned int size)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -84,6 +84,8 @@ int	find_median(t_pos *stack_a)
 	int		median;
 
 	array = get_array(stack_a);
+	if (!array)
+		return (0);
 	bubble_sort(array, stack_a->size);
 	median = array[stack_a->size / 2];
 	free(array);
@@ -104,17 +106,20 @@ static int	is_sorted(t_pos *stack)
 	return (1);
 }
 
-void	sort(t_pos *stack_a, t_pos *stack_b)
+int	sort(t_pos *stack_a, t_pos *stack_b)
 {
 	int	median;
 
 	median = find_median(stack_a);
+	if (!median)
+		return (0);
 	printf("median: %d\n", median);
 	(void)stack_b;
 	if (is_sorted(stack_a))
-		return ;
+		return (1);
 /*	if (stack_a->size <= 10)
 		insertion_sort(stack_a, stack_b);
 	else
 		quicksort(stack_a, stack_b);*/
+	return (1);
 }

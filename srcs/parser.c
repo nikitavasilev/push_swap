@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 06:44:06 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/31 06:21:18 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/04/04 19:44:29 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	**parse(const char **argv)
 	char	**args;
 
 	str = ft_strdup("");
+	if (!str)
+		ft_error("Error");
 	i = 1;
 	while (argv[i])
 	{
@@ -32,6 +34,8 @@ char	**parse(const char **argv)
 		str = strjoin_free_s1(str, argv[i]);
 		if (argv[i + 1])
 			str = strjoin_free_s1(str, " ");
+		if (!str)
+			ft_error("Error");
 		i++;
 	}
 	args = ft_split(str, ' ');

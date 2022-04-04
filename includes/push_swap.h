@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 18:19:13 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/31 08:06:42 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/04/04 19:21:29 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,6 @@ void	print_stacks(t_pos *stack_a, t_pos *stack_b);
 void	free_stacks(t_pos *stack_a, t_pos *stack_b);
 void	del_list(t_list *lst);
 
-void	sort(t_pos *stack_a, t_pos *stack_b);
+int		sort(t_pos *stack_a, t_pos *stack_b);
 
 #endif
