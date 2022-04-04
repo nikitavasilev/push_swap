@@ -6,7 +6,7 @@
 #    By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/21 18:57:42 by nvasilev          #+#    #+#              #
-#    Updated: 2022/03/31 08:07:27 by nvasilev         ###   ########.fr        #
+#    Updated: 2022/04/04 18:58:36 by nvasilev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@
 
 NAME = 			push_swap
 
-CC = 			gcc
-CFLAGS =		-Wall -Wextra -Werror -g
+CC = 			cc
+CFLAGS =		-Wall -Wextra -Werror -g3
 RM =			rm -f
 
 INCLUDES = -I ./includes/
