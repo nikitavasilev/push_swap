@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 18:19:13 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/04/04 19:21:29 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/04/06 15:48:22 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,13 @@ typedef struct s_pos
 	t_list	*tail;
 	size_t	size;
 }	t_pos;
+
+typedef struct s_values
+{
+	int	max;
+	int	min;
+	int	median;
+}	t_values;
 
 t_list	*alloc_lst(void);
 t_pos	*alloc_pos(void);
