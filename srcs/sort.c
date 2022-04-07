@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 08:02:52 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/04/06 15:58:10 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/04/07 22:33:07 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,106 @@
 			current = current->next;
 	}
 }*/
+
+static int	find_min(t_pos *stack_a)
+{
+	t_list	*current;
+	int		min;
+
+	current = stack_a->head;
+	min = current->data;
+	while (current)
+	{
+		if (current->data < min)
+			min = current->data;
+		current = current->next;
+	}
+	return (min);
+}
+
+static int	is_sorted(t_pos *stack)
+{
+	t_list	*lst;
+
+	lst = stack->head;
+	while (lst->next)
+	{
+		if (lst->data > lst->next->data)
+			return (0);
+		lst = lst->next;
+	}
+	return (1);
+}
+
+/*static int	rev_is_sorted(t_pos *stack)
+{
+	t_list	*lst;
+
+	lst = stack->head;
+	while (lst->next)
+	{
+		if (lst->data < lst->next->data)
+			return (0);
+		lst = lst->next;
+	}
+	return (1);
+}*/
+
+static void	selection_sort(t_pos *stack_a, t_pos *stack_b)
+{
+	size_t	i;
+	int		min;
+	t_list	*current;
+
+	current = stack_a->head;
+	min = find_min(stack_a);
+	i = 0;
+	while (current)
+	{
+		/*if (stack_a->size >= 2 && stack_a->size <= 3)
+		{
+			if (current->next)
+				if (current->data > current->next->data)
+				{
+					sa(stack_a);
+					current = stack_a->head;
+				}
+		}*/
+		if (current->data == min)
+		{
+			if (i >= stack_a->size / 2)
+			{
+				while (i < stack_a->size)
+				{
+					rra(stack_a);
+					i++;
+				}
+			}
+			else
+			{
+				while (i > 0)
+				{
+					ra(stack_a);
+					i--;
+				}
+			}
+			if (!is_sorted(stack_a))
+				pb(stack_a, stack_b);
+			if (stack_a->size > 1 && !is_sorted(stack_a))
+			{
+				i = 0;
+				min = find_min(stack_a);
+				current = stack_a->head;
+				continue ;
+			}
+		}
+		current = current->next;
+		i++;
+	}
+	if (stack_b->size > 0)
+		while (stack_b->head)
+			pa(stack_b, stack_a);
+}
 
 static int	*get_array(t_pos *stack_a)
 {
@@ -97,20 +197,6 @@ t_values	*find_median(t_pos *stack_a)
 	return (a_values);
 }
 
-static int	is_sorted(t_pos *stack)
-{
-	t_list	*lst;
-
-	lst = stack->head;
-	while (lst->next)
-	{
-		if (lst->data > lst->next->data)
-			return (0);
-		lst = lst->next;
-	}
-	return (1);
-}
-
 int	sort(t_pos *stack_a, t_pos *stack_b)
 {
 	t_values	*a_values;
@@ -122,9 +208,9 @@ int	sort(t_pos *stack_a, t_pos *stack_b)
 	(void)stack_b;
 	if (is_sorted(stack_a))
 		return (1);
-/*	if (stack_a->size <= 10)
-		insertion_sort(stack_a, stack_b);
-	else
+	if (stack_a->size <= 10)
+		selection_sort(stack_a, stack_b);
+/*	else
 		quicksort(stack_a, stack_b);*/
 	free(a_values);
 	return (1);
