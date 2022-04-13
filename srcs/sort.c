@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 08:02:52 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/04/10 04:39:50 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/04/13 23:05:36 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,63 @@ static int	is_sorted(t_pos *stack)
 	return (1);
 }
 
+static int	is_rev_sorted(t_pos *stack)
+{
+	t_list	*lst;
+
+	lst = stack->head;
+	while (lst->next)
+	{
+		if (lst->data < lst->next->data)
+			return (0);
+		lst = lst->next;
+	}
+	return (1);
+}
+
+static size_t	find_shortest_path(size_t index, size_t size, t_pos *stack)
+{
+	if (index > size / 2)
+	{
+		while (index < size)
+		{
+			rra(stack);
+			index++;
+		}
+	}
+	else
+	{
+		while (index > 0)
+		{
+			ra(stack);
+			index--;
+		}
+	}
+	return (index);
+}
+
+static int	smart_swap_a(t_pos *stack_a)
+{
+	if (stack_a->size == 2)
+	{
+		if (stack_a->head->data > stack_a->head->next->data)
+		{
+			sa(stack_a);
+			return (1);
+		}
+	}
+	else if (stack_a->size >= 3)
+	{
+		if (stack_a->head->next->next->data > stack_a->head->data &&
+			stack_a->head->next->next->data > stack_a->head->next->data)
+		{
+			sa(stack_a);
+			return (1);
+		}
+	}
+	return (0);
+}
+
 static void	selection_sort(t_pos *stack_a, t_pos *stack_b)
 {
 	size_t	i;
@@ -55,33 +112,20 @@ static void	selection_sort(t_pos *stack_a, t_pos *stack_b)
 	i = 0;
 	while (current)
 	{
-		if (stack_a->size >= 2 && stack_a->size <= 3 && i == 0)
+		if (stack_a->size == 3 && is_rev_sorted(stack_a))
 		{
-			if (current->next)
-				if (current->data > current->next->data)
-				{
-					sa(stack_a);
-					current = stack_a->head;
-				}
+			ra(stack_a);
+			sa(stack_a);
+			continue ;
+		}
+		if (i == 0 && stack_a->size >= 3 && !is_sorted(stack_a))
+		{
+			if (smart_swap_a(stack_a))
+				current = stack_a->head;
 		}
 		if (current->data == min)
 		{
-			if (i >= stack_a->size / 2)
-			{
-				while (i < stack_a->size)
-				{
-					rra(stack_a);
-					i++;
-				}
-			}
-			else
-			{
-				while (i > 0)
-				{
-					ra(stack_a);
-					i--;
-				}
-			}
+			i = find_shortest_path(i, stack_a->size, stack_a);
 			if (!is_sorted(stack_a))
 				pb(stack_a, stack_b);
 			if (stack_a->size > 1 && !is_sorted(stack_a))
@@ -155,7 +199,10 @@ t_values	*find_median(t_pos *stack_a)
 		return (0);
 	a_values = (t_values *)malloc(sizeof(t_values));
 	if (!a_values)
+	{
+		free(array);
 		return (0);
+	}
 	bubble_sort(array, stack_a->size);
 	a_values->median = array[stack_a->size / 2];
 	a_values->min = array[0];
@@ -174,7 +221,10 @@ int	sort(t_pos *stack_a, t_pos *stack_b)
 //	printf("median: %d\n", a_values->median);
 	(void)stack_b;
 	if (is_sorted(stack_a))
+	{
+		free(a_values);
 		return (1);
+	}
 	if (stack_a->size <= 500)
 		selection_sort(stack_a, stack_b);
 /*	else
