@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 19:53:46 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/04/07 22:15:36 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/04/12 19:04:52 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ static void	swap(t_pos *node)
 	node->head->next->next = temp[2];
 	node->head->prev = NULL;
 	node->head->next->prev = node->head;
+	if (node->head->next->next)
+		node->head->next->next->prev = node->head->next;
 }
 /*
 static void	swap(t_pos *node)
