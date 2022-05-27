@@ -6,7 +6,7 @@
 #    By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/21 18:57:42 by nvasilev          #+#    #+#              #
-#    Updated: 2022/05/18 04:39:50 by nvasilev         ###   ########.fr        #
+#    Updated: 2022/05/27 02:51:49 by nvasilev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,15 @@ PUSH_SWAP_SRCS =	./push_swap_srcs/main.c \
 					./push_swap_srcs/fill_stack.c \
 					./push_swap_srcs/check_dups.c \
 					./push_swap_srcs/push.c \
-					./push_swap_srcs/sort.c
+					./push_swap_srcs/sort.c \
+					./push_swap_srcs/bubble_sort.c \
+					./push_swap_srcs/selection_sort.c \
+					./push_swap_srcs/insertion_sort.c \
+					./push_swap_srcs/find_median.c \
+					./push_swap_srcs/sorted.c \
+					./push_swap_srcs/smart_swap.c \
+					./push_swap_srcs/find_min.c \
+					./push_swap_srcs/find_shortest_path.c
 
 CHECKER_SRCS =		./checker_srcs/main.c
 
