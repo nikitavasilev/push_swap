@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 22:20:08 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/05/27 01:46:36 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/05/27 02:04:19 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,8 @@ static void	fill_array(int *arr, int size)
 
 int	main(int argc, char const *argv[])
 {
-	int				numbers;
-	int				*arr;
+	int	numbers;
+	int	*arr;
 
 	if (argc == 2)
 	{
