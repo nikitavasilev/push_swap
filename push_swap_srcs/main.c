@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 18:25:43 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/04/10 04:06:47 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/05/27 02:49:44 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ int	main(int argc, char const *argv[])
 			free_stacks(stack_a, stack_b);
 			ft_error("Error");
 		}
-		//print_stacks(stack_a, stack_b);
 		free_stacks(stack_a, stack_b);
 	}
 	return (0);
