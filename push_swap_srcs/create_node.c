@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 18:55:03 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/31 06:28:17 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/06/04 04:29:22 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ t_list	*create_node(t_list *prev, int data, t_pos *pos)
 	t_list	*list;
 
 	list = malloc(sizeof(t_list));
+	if (!list)
+		return (NULL);
 	list->data = data;
 	list->next = NULL;
 	list->prev = prev;
