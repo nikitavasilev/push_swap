@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 20:05:38 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/31 07:48:08 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/06/04 06:03:21 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,11 @@ static void	print_list(t_pos *pos, char stack)
 	t_list	*current;
 	int		i;
 
-	i = 0;
+	if (!pos || !pos->head)
+		return ;
 	current = pos->head;
 	print_line_info(stack, pos->size, 0);
+	i = 0;
 	while (current != pos->tail)
 	{
 		print_line_info(' ', i++, current->data);
