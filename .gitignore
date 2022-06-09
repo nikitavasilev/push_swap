@@ -54,3 +54,6 @@ dkms.conf
 # Executables
 push_swap
 random
+
+# VS Code cache
+.vscode/
