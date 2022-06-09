@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 18:19:13 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/06/06 09:08:20 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/06/07 05:44:18 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define PUSH_SWAP_H
 
 # include <stddef.h>
-
-# define CHUNK_SIZE 20
 
 typedef struct s_list
 {
@@ -88,5 +86,7 @@ void		selection_sort_invert(t_pos *stack_a, t_pos *stack_b);
 void		selection_sort_stop(t_pos *stack_a, t_pos *stack_b);
 size_t		find_shortest_path_b(size_t index, size_t size, t_pos *stack);
 int			find_max(t_pos *stack);
+void		selection_sort_stop_min_max(t_pos *stack_a, t_pos *stack_b);
+void		selection_sort_small(t_pos *stack_a, t_pos *stack_b);
 
 #endif
