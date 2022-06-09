@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 08:02:52 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/06/06 04:35:20 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/06/07 05:59:35 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ int	sort(t_pos *stack_a, t_pos *stack_b)
 		//free(a_values);
 		return (1);
 	}
-	if (stack_a->size <= 50)
-		selection_sort(stack_a, stack_b);
+	if (stack_a->size <= 20)
+		selection_sort_small(stack_a, stack_b);
 	else
 		partial_sort(stack_a, stack_b);
 	//free(a_values);
