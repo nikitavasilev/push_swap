@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 02:47:55 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/06/04 06:03:38 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/06/07 01:19:39 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,11 @@ static int	calc_moves(t_pos *stack_a, t_pos *stack_b, int median)
 
 void	insertion_sort(t_pos *stack_a, t_pos *stack_b, int median)
 {
-	t_list	*current;
+	//t_list	*current;
 
 	calc_moves(stack_a, stack_b, median);
 	printf("median = %d\n", median);
 	push_to_b(stack_a, stack_b, median);
-	current = stack_b->head;
+	//current = stack_b->head;
 	print_stacks(stack_a, stack_b);
 }
