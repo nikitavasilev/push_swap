@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 02:45:55 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/06/07 09:49:50 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/06/10 05:20:13 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,11 +179,9 @@ int	steps_to_head(t_pos *stack, int range)
 void	push_chunks_to_b(t_pos *stack_a, t_pos *stack_b, t_chunks *chunks)
 {
 	t_list	*current;
-	size_t	i;
 	size_t	j;
 	int		up;
 
-	i = 0;
 	j = 0;
 	current = stack_a->head;
 	if (steps_to_head(stack_a, chunks->data[j]) <
@@ -193,69 +191,65 @@ void	push_chunks_to_b(t_pos *stack_a, t_pos *stack_b, t_chunks *chunks)
 		up = 0;
 	while (current)
 	{
-		if (j + 1 < chunks->count && i == 0)
-		{
-			if (current->data > chunks->data[j] && current->data <= chunks->data[j + 1])
-			{
-				pb(stack_a, stack_b);
-				rb(stack_b);
-				i = 0;
-				current = stack_a->head;
-				continue ;
-			}
-		}
+		// if (j + 1 < chunks->count && i == 0)
+		// {
+		// 	if (current->data > chunks->data[j] && current->data <= chunks->data[j + 1])
+		// 	{
+		// 		pb(stack_a, stack_b);
+		// 		rb(stack_b);
+		// 		i = 0;
+		// 		current = stack_a->head;
+		// 		continue ;
+		// 	}
+		// }
 		if (j < chunks->count && current->data <= chunks->data[j])
 		{
 			if (!up)
 			{
-				while (i > 0)
+				if (j < chunks->count && current->data <= chunks->data[j])
 				{
-					ra(stack_a);
+					pb(stack_a, stack_b);
 					current = stack_a->head;
-					if (j + 1 < chunks->count)
-					{
-						if (current->data > chunks->data[j] && current->data <= chunks->data[j + 1])
-						{
-							pb(stack_a, stack_b);
-							rb(stack_b);
-							i = 0;
-							current = stack_a->head;
-							break ;
-						}
-					}
-					i--;
+					continue ;
 				}
+				if (j + 1 < chunks->count)
+				{
+					if (current->data > chunks->data[j] && current->data <= chunks->data[j + 1])
+					{
+						pb(stack_a, stack_b);
+						rb(stack_b);
+						current = stack_a->head;
+						continue ;
+					}
+				}
+				current = current->next;
+				ra(stack_a);
 			}
 			else if (up)
 			{
-				while (i < stack_a->size)
+				if (j < chunks->count && current->data <= chunks->data[j])
 				{
-					rra(stack_a);
+					pb(stack_a, stack_b);
 					current = stack_a->head;
-					if (j + 1 < chunks->count)
-					{
-						if (current->data > chunks->data[j] && current->data <= chunks->data[j + 1])
-						{
-							pb(stack_a, stack_b);
-							rb(stack_b);
-							i = 0;
-							current = stack_a->head;
-							break ;
-						}
-					}
-					i++;
+					continue ;
 				}
+				if (j + 1 < chunks->count)
+				{
+					if (current->data > chunks->data[j] && current->data <= chunks->data[j + 1])
+					{
+						pb(stack_a, stack_b);
+						rb(stack_b);
+						current = stack_a->head;
+						continue ;
+					}
+				}
+				current = current->next;
+				rra(stack_a);
 			}
-			if (j < chunks->count && current->data <= chunks->data[j])
-				pb(stack_a, stack_b);
-			i = 0;
-			current = stack_a->head;
-			continue ;
 		}
 		if (current == stack_a->tail && j < chunks->count)
 		{
 			current = stack_a->head;
-			i = 0;
 			j++;
 			if (steps_to_head(stack_a, chunks->data[j]) <
 				steps_to_tail(stack_a, chunks->data[j]))
@@ -265,7 +259,6 @@ void	push_chunks_to_b(t_pos *stack_a, t_pos *stack_b, t_chunks *chunks)
 			continue ;
 		}
 		current = current->next;
-		i++;
 	}
 }
 
@@ -297,7 +290,8 @@ void	push_chunks_to_b(t_pos *stack_a, t_pos *stack_b, t_chunks *chunks)
 // 			cheapest = find_cheapest(stack_a, stack_a->size, chunks->data[j]);
 // 			if (current->data == cheapest)
 // 			{
-// 				i = find_shortest_path(i, stack_a->size, stack_a);
+// 				//i = find_shortest_path(i, stack_a->size, stack_a);
+// 				i = find_shortest_path_and_push_next_chunk(i, stack_a->size, stack_a, stack_b, chunks, j);
 // 				if (!is_sorted(stack_a))
 // 					pb(stack_a, stack_b);
 // 				i = 0;
