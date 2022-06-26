@@ -6,12 +6,10 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 02:47:55 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/06/07 01:19:39 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/06/26 21:10:02 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
 #include <stdlib.h>
 #include "push_swap.h"
 
@@ -68,17 +66,12 @@ static int	calc_moves(t_pos *stack_a, t_pos *stack_b, int median)
 	new_stack_a = cpy_stack(stack_a);
 	new_stack_b = cpy_stack(stack_b);
 	print_stacks(new_stack_a, new_stack_b);
-	printf("\n\n");
 	return (0);
 }
 
 void	insertion_sort(t_pos *stack_a, t_pos *stack_b, int median)
 {
-	//t_list	*current;
-
 	calc_moves(stack_a, stack_b, median);
-	printf("median = %d\n", median);
 	push_to_b(stack_a, stack_b, median);
-	//current = stack_b->head;
 	print_stacks(stack_a, stack_b);
 }
