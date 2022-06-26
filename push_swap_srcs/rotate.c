@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 19:56:56 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/31 06:31:36 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/06/26 20:52:59 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,9 @@ void	rb(t_pos *stack_b)
 
 void	rr(t_pos *stack_a, t_pos *stack_b)
 {
-	if (stack_a->size > 1 && stack_b->size > 1)
-	{
+	if (stack_a->size > 1)
 		rotate(stack_a);
+	if (stack_b->size > 1)
 		rotate(stack_b);
-	}
 	ft_putstr_fd("rr\n", STDOUT_FILENO);
 }
