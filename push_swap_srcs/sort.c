@@ -6,31 +6,37 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 08:02:52 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/06/07 05:59:35 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/06/26 22:50:29 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
 #include "push_swap.h"
 
+void	partial_sort(t_pos *stack_a, t_pos *stack_b)
+{
+	t_chunks	*chunks;
+
+	chunks = get_chunks(stack_a);
+	if (!chunks)
+		return ;
+	push_chunks_to_b(stack_a, stack_b, chunks);
+	free(chunks->data);
+	free(chunks);
+	if (stack_a->size <= 20)
+		selection_sort_stop(stack_a, stack_b);
+	else
+		selection_sort_stop_min_max(stack_a, stack_b);
+	selection_sort_invert(stack_a, stack_b);
+}
+
 int	sort(t_pos *stack_a, t_pos *stack_b)
 {
-	/*t_values	*a_values;
-
-	a_values = find_median(stack_a);
-	if (!a_values)
-		return (0);*/
-	(void)stack_b;
 	if (is_sorted(stack_a))
-	{
-		//free(a_values);
 		return (1);
-	}
 	if (stack_a->size <= 20)
 		selection_sort_small(stack_a, stack_b);
 	else
 		partial_sort(stack_a, stack_b);
-	//free(a_values);
 	return (1);
 }
