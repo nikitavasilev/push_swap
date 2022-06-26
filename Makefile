@@ -6,7 +6,7 @@
 #    By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/21 18:57:42 by nvasilev          #+#    #+#              #
-#    Updated: 2022/06/06 05:32:06 by nvasilev         ###   ########.fr        #
+#    Updated: 2022/06/26 22:49:02 by nvasilev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,9 @@ PUSH_SWAP_SRCS =	./push_swap_srcs/main.c \
 					./push_swap_srcs/push.c \
 					./push_swap_srcs/sort.c \
 					./push_swap_srcs/bubble_sort.c \
-					./push_swap_srcs/selection_sort.c \
+					./push_swap_srcs/selection_sort_big.c \
+					./push_swap_srcs/selection_sort_stop.c \
+					./push_swap_srcs/selection_sort_invert.c \
 					./push_swap_srcs/insertion_sort.c \
 					./push_swap_srcs/find_median.c \
 					./push_swap_srcs/sorted.c \
@@ -49,7 +51,9 @@ PUSH_SWAP_SRCS =	./push_swap_srcs/main.c \
 					./push_swap_srcs/find_min.c \
 					./push_swap_srcs/find_shortest_path.c \
 					./push_swap_srcs/chunks.c \
-					./push_swap_srcs/find_max.c
+					./push_swap_srcs/find_max.c \
+					./push_swap_srcs/selection_sort_small.c \
+					./push_swap_srcs/get_chunks.c
 
 CHECKER_SRCS =		./checker_srcs/main.c
 
@@ -64,7 +68,8 @@ UTILS =				./utils/ft_putchar_fd.c \
 					./utils/ft_strdup.c \
 					./utils/atoi_err_overflow.c \
 					./utils/strjoin_free_s1.c \
-					./utils/ft_putnbr_fd.c
+					./utils/ft_putnbr_fd.c \
+					./utils/power.c
 
 ################################################################################
 #                                     OBJECTS                                  #
