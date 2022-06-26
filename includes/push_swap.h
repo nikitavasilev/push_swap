@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 18:19:13 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/06/07 05:44:18 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/06/26 22:50:03 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ typedef struct s_chunks
 	int				*data;
 	size_t			count;
 }	t_chunks;
-
 
 t_list		*alloc_lst(void);
 t_pos		*alloc_pos(void);
@@ -88,5 +87,7 @@ size_t		find_shortest_path_b(size_t index, size_t size, t_pos *stack);
 int			find_max(t_pos *stack);
 void		selection_sort_stop_min_max(t_pos *stack_a, t_pos *stack_b);
 void		selection_sort_small(t_pos *stack_a, t_pos *stack_b);
+t_chunks	*get_chunks(t_pos *stack_a);
+void		push_chunks_to_b(t_pos *stack_a, t_pos *stack_b, t_chunks *chunks);
 
 #endif
