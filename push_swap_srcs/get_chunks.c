@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 22:47:38 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/06/26 23:41:29 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/06/27 11:14:54 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ static unsigned int	calc_chunks_size(t_pos *stack_a)
 	unsigned int	chunk_size;
 
 	if (stack_a->size > 100)
-		chunk_size = 20 * power(1.2, stack_a->size / 100) + 1;
+		chunk_size = 18 * power(1.075, stack_a->size / 100) + 1;
 	else
-		chunk_size = stack_a->size * 0.2;
+		chunk_size = stack_a->size * 0.1;
 	return (chunk_size);
 }
 
@@ -85,7 +85,7 @@ t_chunks	*get_chunks(t_pos *stack_a)
 	{
 		chunks->data[i] = array[j - 1];
 		i++;
-		j += chunk_size - (chunk_size * 0.1);
+		j += chunk_size - (chunk_size * 0.025);
 	}
 	free(array);
 	return (chunks);
