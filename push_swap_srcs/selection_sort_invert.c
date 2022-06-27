@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 22:39:55 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/06/27 12:34:14 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/06/27 20:02:10 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,15 @@ static int	find_second_max(t_pos *stack, int max)
 	return (second_max);
 }
 
-size_t	smart_push_to_a(size_t index, size_t size, t_pos *stack_a, t_pos *stack_b, int second_max)
+static size_t	smart_pa(size_t index, size_t size, t_stacks *stacks, int s_max)
 {
 	if (index > size / 2)
 	{
 		while (index < size)
 		{
-			rrb(stack_b);
-			if (stack_b->head->data == second_max)
-				pa(stack_b, stack_a);
+			rrb(stacks->b);
+			if (stacks->b->head->data == s_max)
+				pa(stacks->b, stacks->a);
 			index++;
 		}
 	}
@@ -44,10 +44,10 @@ size_t	smart_push_to_a(size_t index, size_t size, t_pos *stack_a, t_pos *stack_b
 	{
 		while (index > 0)
 		{
-			rb(stack_b);
-			if (stack_b->head->data == second_max)
+			rb(stacks->b);
+			if (stacks->b->head->data == s_max)
 			{
-				pa(stack_b, stack_a);
+				pa(stacks->b, stacks->a);
 				index--;
 			}
 			index--;
@@ -56,7 +56,16 @@ size_t	smart_push_to_a(size_t index, size_t size, t_pos *stack_a, t_pos *stack_b
 	return (index);
 }
 
-void	selection_sort_invert(t_pos *stack_a, t_pos *stack_b)
+static void	find_new_max(t_stacks *stacks, int *s_max, int *max, t_list **curr)
+{
+	*max = find_max(stacks->b);
+	*s_max = find_second_max(stacks->b, *max);
+	if (stacks->a->head->data > stacks->a->head->next->data)
+		sa(stacks->a);
+	*curr = stacks->b->head;
+}
+
+void	selection_sort_invert(t_pos *stack_a, t_pos *stack_b, t_stacks *stacks)
 {
 	size_t	i;
 	int		max;
@@ -71,16 +80,12 @@ void	selection_sort_invert(t_pos *stack_a, t_pos *stack_b)
 	{
 		if (current->data == max)
 		{
-			i = smart_push_to_a(i, stack_b->size, stack_a, stack_b, second_max);
+			i = smart_pa(i, stack_b->size, stacks, second_max);
 			pa(stack_b, stack_a);
 			if (stack_b->size > 0)
 			{
 				i = 0;
-				max = find_max(stack_b);
-				second_max = find_second_max(stack_b, max);
-				if (stack_a->head->data > stack_a->head->next->data)
-					sa(stack_a);
-				current = stack_b->head;
+				find_new_max(stacks, &second_max, &max, &current);
 				continue ;
 			}
 		}
