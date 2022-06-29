@@ -6,7 +6,7 @@
 #    By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/21 18:57:42 by nvasilev          #+#    #+#              #
-#    Updated: 2022/06/28 14:37:06 by nvasilev         ###   ########.fr        #
+#    Updated: 2022/06/29 20:06:42 by nvasilev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,6 +67,7 @@ CHECKER_SRCS =		./checker_srcs/main.c \
 					./utils/ft_strjoin.c \
 					./utils/ft_substr.c \
 					./utils/ft_strchr.c \
+					./utils/ft_strcmp.c \
 					./push_swap_srcs/parser.c \
 					./push_swap_srcs/fill_stack.c \
 					./push_swap_srcs/create_node.c \

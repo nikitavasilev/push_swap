@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 04:40:25 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/06/29 19:35:45 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/06/29 20:14:25 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,27 +19,27 @@
 
 static void	do_operations(char *line, t_pos *stack_a, t_pos *stack_b)
 {
-	if (ft_strncmp(line, "sa", 2) == 0)
+	if (ft_strcmp(line, "sa\n") == 0)
 		sa_c(stack_a);
-	else if (ft_strncmp(line, "sb", 2) == 0)
+	else if (ft_strcmp(line, "sb\n") == 0)
 		sb_c(stack_b);
-	else if (ft_strncmp(line, "ss", 2) == 0)
+	else if (ft_strcmp(line, "ss\n") == 0)
 		ss_c(stack_a, stack_b);
-	else if (ft_strncmp(line, "pa", 2) == 0)
+	else if (ft_strcmp(line, "pa\n") == 0)
 		pa_c(stack_b, stack_a);
-	else if (ft_strncmp(line, "pb", 2) == 0)
+	else if (ft_strcmp(line, "pb\n") == 0)
 		pb_c(stack_a, stack_b);
-	else if (ft_strncmp(line, "ra", 2) == 0)
+	else if (ft_strcmp(line, "ra\n") == 0)
 		ra_c(stack_a);
-	else if (ft_strncmp(line, "rb", 2) == 0)
+	else if (ft_strcmp(line, "rb\n") == 0)
 		rb_c(stack_b);
-	else if (ft_strncmp(line, "rra", 3) == 0)
+	else if (ft_strcmp(line, "rra\n") == 0)
 		rra_c(stack_a);
-	else if (ft_strncmp(line, "rrb", 3) == 0)
+	else if (ft_strcmp(line, "rrb\n") == 0)
 		rrb_c(stack_b);
-	else if (ft_strncmp(line, "rrr", 3) == 0)
+	else if (ft_strcmp(line, "rrr\n") == 0)
 		rrr_c(stack_a, stack_b);
-	else if (ft_strncmp(line, "rr", 2) == 0)
+	else if (ft_strcmp(line, "rr\n") == 0)
 		rr_c(stack_a, stack_b);
 	else
 		ft_error("Error");
