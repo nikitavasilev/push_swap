@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 05:42:20 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/06/26 22:45:46 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/06/28 13:17:17 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define LIBFT_H
 
 # include <stddef.h>
+
+# define BUFFER_SIZE 32
+# define MAX_FD 256
 
 int			ft_isspace(int c);
 int			ft_isdigit(int c);
@@ -28,5 +31,10 @@ int			atoi_err_overflow(const char *str, int *err);
 char		*strjoin_free_s1(char *s1, char const *s2);
 void		ft_putnbr_fd(int n, int fd);
 float		power(float x, int y);
+char		*get_next_line(int fd);
+int			ft_strncmp(const char *s1, const char *s2, size_t n);
+char		*ft_strchr(const char *s, int c);
+char		*ft_substr(char const *s, unsigned int start, size_t len);
+char		*ft_strjoin(char const *s1, char const *s2);
 
 #endif
