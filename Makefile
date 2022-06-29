@@ -6,7 +6,7 @@
 #    By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/21 18:57:42 by nvasilev          #+#    #+#              #
-#    Updated: 2022/06/28 01:21:14 by nvasilev         ###   ########.fr        #
+#    Updated: 2022/06/28 14:37:06 by nvasilev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,27 @@ PUSH_SWAP_SRCS =	./push_swap_srcs/main.c \
 					./push_swap_srcs/selection_sort_small.c \
 					./push_swap_srcs/get_chunks.c
 
-CHECKER_SRCS =		./checker_srcs/main.c
+CHECKER_SRCS =		./checker_srcs/main.c \
+					./checker_srcs/rotate_c.c \
+					./checker_srcs/rrotate_c.c \
+					./checker_srcs/swap_c.c \
+					./checker_srcs/push_c.c \
+					./push_swap_srcs/swap.c \
+					./push_swap_srcs/rotate.c \
+					./push_swap_srcs/rrotate.c \
+					./push_swap_srcs/push.c \
+					./utils/get_next_line.c \
+					./utils/ft_strncmp.c \
+					./utils/ft_strjoin.c \
+					./utils/ft_substr.c \
+					./utils/ft_strchr.c \
+					./push_swap_srcs/parser.c \
+					./push_swap_srcs/fill_stack.c \
+					./push_swap_srcs/create_node.c \
+					./push_swap_srcs/check_dups.c \
+					./push_swap_srcs/alloc_struct.c \
+					./push_swap_srcs/del_list.c \
+					./push_swap_srcs/sorted.c
 
 UTILS =				./utils/ft_putchar_fd.c \
 					./utils/ft_putstr_fd.c \
