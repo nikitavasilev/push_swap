@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 19:56:56 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/06/26 20:52:59 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/06/28 13:43:51 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "push_swap.h"
 #include <unistd.h>
 
-static void	rotate(t_pos *node)
+void	rotate(t_pos *node)
 {
 	t_list	*temp[2];
 

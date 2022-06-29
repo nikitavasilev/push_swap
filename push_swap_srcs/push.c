@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 11:45:40 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/03/31 06:30:55 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/06/28 13:57:45 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "push_swap.h"
 #include <unistd.h>
 
-static void	push(t_pos *src, t_pos *dest)
+void	push(t_pos *src, t_pos *dest)
 {
 	t_list	*temp_src_head;
 	t_list	*temp_dest_head;

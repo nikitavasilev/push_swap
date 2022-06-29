@@ -6,7 +6,7 @@
 /*   By: nvasilev <nvasilev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 19:53:46 by nvasilev          #+#    #+#             */
-/*   Updated: 2022/04/12 19:04:52 by nvasilev         ###   ########.fr       */
+/*   Updated: 2022/06/28 13:55:22 by nvasilev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "push_swap.h"
 #include <unistd.h>
 
-static void	swap(t_pos *node)
+void	swap(t_pos *node)
 {
 	t_list	*temp[3];
 
@@ -29,18 +29,6 @@ static void	swap(t_pos *node)
 	if (node->head->next->next)
 		node->head->next->next->prev = node->head->next;
 }
-/*
-static void	swap(t_pos *node)
-{
-	t_list	*old_next;
-
-	old_next = node->head->next;
-	old_next->next = node->head;
-	old_next->prev = NULL;
-	node->head->next = node->head->next->next;
-	node->head = old_next;
-	node->head->next->prev = node->head;
-}*/
 
 void	sa(t_pos *stack_a)
 {
